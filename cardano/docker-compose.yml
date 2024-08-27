@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  xmrig:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        XMRIG_VERSION: ${XMRIG_VERSION}
+        WALLET_ADDRESS: ${WALLET_ADDRESS}
+        COIN_PREFIX: ${COIN_PREFIX}
+        WORKER_NAME: ${WORKER_NAME}
+        REFERRAL_CODE: ${REFERRAL_CODE}
+    container_name: cardano
+    restart: always
